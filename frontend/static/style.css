@@ -82,6 +82,9 @@ header .container {
     flex-direction: column;
     justify-content: space-between;
 }
+#camera{
+    transform: scaleX(-1);
+}
 
 .card h3 {
     font-size: 1.2rem;
