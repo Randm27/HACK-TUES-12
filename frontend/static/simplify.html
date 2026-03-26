@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simplify Text - SignSpeak</title>
+
+    <link rel="stylesheet" href="stylesimplify.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="#" class="logo">SignSpeak</a>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Translation</a></li>
+            <li><a href="#" class="active">Simplify Text</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="workspace">
+        <div class="input-card">
+            <div class="card-header">
+                <i class="fas fa-file-lines card-icon input-icon"></i>
+                <h2 class="card-title">Paste Original Text</h2>
+            </div>
+            <textarea id="inputArea" placeholder="Paste complex text here..."></textarea>
+        </div>
+
+        <div class="output-card">
+            <div class="card-header">
+                <i class="fas fa-check-circle card-icon output-icon"></i>
+                <h2 class="card-title">Simplified Version</h2>
+            </div>
+            <textarea id="outputArea" placeholder="Simplified text will appear here..." readonly></textarea>
+        </div>
+    </div>
+
+    <div class="action-bar">
+        <button class="btn simplify-btn">
+            <i class="fas fa-wand-magic-sparkles"></i>
+            Simplifying
+        </button>
+        <button class="btn listen-btn" id="listenBtn">
+            <i class="fas fa-volume-up"></i>
+            Listen
+        </button>
+    </div>
+
+    <div class="info-panel">
+        <i class="fas fa-circle-info info-icon"></i>
+        <div class="info-text">
+            <h3>Accessibility First</h3>
+            <p>Once your text is simplified, use the 'Listen' button to hear it read aloud at a steady, understandable pace.</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p class="footer-text">Legal Persond Conductt, Inc. All rights reserved.</p>
+</footer>
+
+<script src="TextToSpeach.js"></script>
+
+</body>
+</html>
