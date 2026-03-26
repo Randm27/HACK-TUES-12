@@ -24,27 +24,7 @@ def hand_gesture_classification(image):
         logits = outputs.logits
         probs = torch.nn.functional.softmax(logits, dim=1).squeeze().tolist()
     
-    labels = {
-        "0": "y", 
-        "1": "dislike", 
-        "2": "a", 
-        "3": "four", 
-        "4": "like", 
-        "5": "mute", 
-        "6": "no_gesture", 
-        "7": "c", 
-        "8": "d", 
-        "9": "palm", 
-        "10": "k", 
-        "11": "peace_inverted", 
-        "12": "rock", 
-        "13": "s", 
-        "14": "stop_inverted", 
-        "15": "w", 
-        "16": "three2", 
-        "17": "h", 
-        "18": "two_up_inverted"
-    }
+    labels = model.config.id2label
     predictions = {labels[str(i)]: round(probs[i], 3) for i in range(len(probs))}
     
     return predictions
