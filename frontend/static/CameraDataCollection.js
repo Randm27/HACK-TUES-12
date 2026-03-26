@@ -30,8 +30,9 @@ function captureFrame() {
 
 async function sendFrameToBackend() {
   const frame = captureFrame();
+  const serverURL = "http://172.20.10.11:5000"
 
-  const response = await fetch("/analyze-frame", {
+  const response = await fetch(`${serverURL}/analyze-frame`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -45,7 +46,7 @@ async function sendFrameToBackend() {
 
 setInterval(async () => {
     const result = await sendFrameToBackend();
-    document.querySelector(".output-text").textContent = result.text;
+    document.querySelector(".output-text").textContent = document.querySelector(".output-text").textContent + result.gesture;
 }, 1000);
 
 
