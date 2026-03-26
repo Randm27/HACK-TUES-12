@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route("/")
 def redirect_controller():
-    return redirect("/Translation.html")
+    return redirect("/homepage.html")
+
 @app.route('/<path:path>')
 def send_report(path):
     # Using request args for path will expose you to directory traversal attacks
