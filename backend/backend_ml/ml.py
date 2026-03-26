@@ -58,6 +58,7 @@ def gesture_from_url(image_url):
 
 def get_gesture(image_url):
     predictions = gesture_from_url(image_url)
+    print(predictions)
     return list(sorted(list(predictions.items()), key = lambda x:x[1], reverse=1))[0][0]
 
-print(get_gesture("https://pnglove.com/data/img/1908_mSc9.jpg"))
+print(get_gesture("https://www.shutterstock.com/image-photo/dislike-hand-sign-closeup-unrecognizable-260nw-2183295151.jpg"))

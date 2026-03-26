@@ -4,8 +4,13 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 
 
-@app.get("/gesture")
-def get_gesture_controller():
-    image_url = request.args.get("image_url")
+# @app.get("/gesture")
+# def get_gesture_controller():
+#     image_url = request.args.get("image_url")
 
-    return jsonify({"gesture":get_gesture(image_url)}), 200
+#     return jsonify({"gesture":get_gesture(image_url)}), 200
+
+@app.post("/analize-frame")
+def analyze():
+    data = request.json["image"]
+    return jsonify({"text":"hello"})
