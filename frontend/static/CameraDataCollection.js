@@ -31,11 +31,22 @@ function captureFrame() {
 async function sendFrameToBackend() {
   const frame = captureFrame();
 
-  await fetch("/analyze-frame", {
+  const response = await fetch("/analyze-frame", {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ image: frame })
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({image: frame})
   });
+
+  const data = await response.json();
+  return data;
 };
+
+setInterval(async () => {
+    const result = await sendFrameToBackend();
+    document.querySelector(".output-text").textContent = result.text;
+}, 1000);
+
 
 startCamera();
