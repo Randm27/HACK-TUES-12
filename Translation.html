@@ -27,11 +27,14 @@
             <p>Our AI-powered translator turns hand signs into live text. Use your camera or upload a video to instantly bridge the gap between sign language and written words. It's designed to help students, creators, and teams communicate more inclusively by making gestures digitally readable in real-time.</p>
         </section>
 
-        <section class="video-section">
+        <!-- <section class="video-section">
             <div class="placeholder-box camera-view">
                 <span class="icon">📷</span>
             </div>
-        </section>
+        </section> -->
+
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
 
         <section class="translation-section">
             <h2>Translated text</h2>
@@ -54,5 +57,6 @@
         </div>
     </footer>
 
+    <script src="CameraDataCollection.js"></script>
 </body>
 </html>
