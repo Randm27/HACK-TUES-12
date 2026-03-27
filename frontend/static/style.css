@@ -71,8 +71,17 @@ header nav {
 
 /* The active underline for the Home page */
 .nav-links a.active {
-    font-weight: 800;
-    border-bottom: 2px solid #001f3f;
+    font-weight: 800; /* Forces the Extra Bold look from your Simplify page */
+    color: #000000;
+    border-bottom: 2px solid #001f3f; /* The dark navy underline */
+    display: inline-block; /* Ensures the border matches the width of the text */
+}
+
+/* Optional: Add a hover effect for non-active links to match the vibe */
+.nav-links a:not(.active):hover {
+    color: #38b2ac; /* Teal highlight */
+    border-bottom: 2px solid #38b2ac;
+    padding-bottom: 6px;
 }
 
 .menu-icon {
