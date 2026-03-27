@@ -37,7 +37,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-model_name = "facebook/bart-large-cnn"
+# model_name = "sshleifer/distilbart-cnn-12-6"
+model_name = "sshleifer/distilbart-cnn-12-6"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
