@@ -13,46 +13,82 @@ body {
     padding: 40px 20px;
 }
 
+/* --- Master Header & Navigation --- */
 header {
     background-color: #ffffff;
     padding: 20px 0;
     border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
 }
 
-nav {
+/* This creates the "Logo on Left, Links on Right" look */
+header nav {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Pushes Logo left and Nav right */
     align-items: center;
 }
 
-.logo {
+/* Fixes the Purple Link Issue & Font Size */
+.logo a {
     font-size: 32px;
     font-weight: 800;
-    color: #000000;
+    color: #000000 !important; /* !important forces it to stay black, never purple */
     text-decoration: none;
+    display: inline-block;
 }
 
+/* Puts links in a row */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 25px;
     margin: 0;
+    padding: 0;
+    align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333;
+    color: #333333 !important; /* Keeps links from turning purple too */
     font-weight: 500;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    border-bottom: 2px solid transparent; 
+    transition: all 0.3s ease;
 }
 
-.nav-links .active {
-    font-weight: 800;
+/* Hover Effect: Teal line and text */
+.nav-links a:not(.active):hover {
+    color: #38b2ac !important;
+    border-bottom: 2px solid #38b2ac;
+}
+
+/* Active Page: Bold and Navy Line */
+.nav-links a.active {
+    font-weight: 800 !important;
+    color: #000000 !important;
     border-bottom: 2px solid #001f3f;
 }
 
+/* --- Responsive Fix --- */
+@media (max-width: 768px) {
+    header nav {
+        flex-direction: row; /* Keeps them on one line even on small screens */
+        justify-content: space-between;
+    }
+    .nav-links {
+        gap: 15px; /* Tightens spacing for mobile */
+    }
+    .nav-links a {
+        font-size: 0.9rem;
+    }
+}
 .workspace {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -155,17 +191,63 @@ textarea {
     font-size: 32px;
     color: #0a84ff;
 }
-
 footer {
-    margin-top: 60px;
-    padding: 30px 0;
+    background-color: #eaf7f0;
+    padding: 40px 0 20px 0;
+    font-family: sans-serif;
+    color: #000000; /* Darker text for readability against the light blue */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000000; /* A deeper blue for the brand name */
+}
+
+.contact-section p {
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effect for a bit of flair */
+.social-btn:hover {
+    color: #007bff;
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
     text-align: center;
     border-top: 1px solid #e0e0e0;
 }
 
-.footer-text {
-    color: #888;
-    font-size: 13px;
+/* Responsive: Stack them on small screens */
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
 
 /* .simplifyTextArea{

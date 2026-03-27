@@ -1,17 +1,14 @@
-/* --- Global Styles --- */
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&display=swap');
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lexend', sans-serif; /* Swapped to Lexend */
+    font-family: 'Lexend', sans-serif; 
     scroll-behavior: smooth;
 }
-
 body {
-    background-color: #f8f9fa; /* Matches Simplify page exactly */
-    color: #333333;
+    background-color: #f8f9fa; 
+    color: #000000;
     line-height: 1.6;
 }
 
@@ -21,7 +18,6 @@ body {
     padding: 0 20px;
 }
 
-/* --- Header (Updated to match Simplify Text exactly) --- */
 header {
     background-color: #ffffff;
     padding: 20px 0;
@@ -32,7 +28,6 @@ header {
     width: 100%;
 }
 
-/* This is the secret sauce: it centers the nav content */
 header nav {
     max-width: 1000px;
     margin: 0 auto;
@@ -66,22 +61,25 @@ header nav {
 }
 
 .nav-links a:hover {
-    color: #38b2ac; /* Teal hover effect */
+    color: #38b2ac; 
 }
-
-/* The active underline for the Home page */
 .nav-links a.active {
-    font-weight: 800;
-    border-bottom: 2px solid #001f3f;
+    font-weight: 800; 
+    color: #000000;
+    border-bottom: 2px solid #001f3f; 
+    display: inline-block; 
 }
-
+.nav-links a:not(.active):hover {
+    color: #38b2ac; 
+    border-bottom: 2px solid #38b2ac;
+    padding-bottom: 6px;
+}
 .menu-icon {
-    display: none; /* Hide on desktop */
+    display: none; 
     font-size: 24px;
     cursor: pointer;
 }
 
-/* --- Cards Section --- */
 .cards {
     display: flex;
     justify-content: center;
@@ -127,7 +125,6 @@ header nav {
     margin-bottom: 25px;
 }
 
-/* --- Card Buttons --- */
 .card-btn {
     display: inline-flex;
     align-items: center;
@@ -142,21 +139,17 @@ header nav {
     font-weight: bold;
     transition: all 0.3s ease;
 }
-
 .card:nth-child(1) .card-btn {
-    background: #1a56ad; /* Blue */
+    background: #1a56ad; 
 }
 
 .card:nth-child(2) .card-btn {
-    background: #38b2ac; /* Teal */
+    background: #38b2ac; 
 }
-
 .card-btn:hover {
     opacity: 0.9;
     transform: scale(1.05);
 }
-
-/* --- Content Sections --- */
 .mission, .clause {
     background: #ffffff;
     margin: 40px 0;
@@ -165,7 +158,6 @@ header nav {
     border: 1px solid #e0e0e0;
 }
 
-/* Subtle accent lines for modern feel */
 .mission { border-left: 6px solid #38b2ac; }
 .clause { border-left: 6px solid #1a56ad; }
 
@@ -175,38 +167,66 @@ header nav {
     color: #2d3748;
 }
 
-/* --- Footer --- */
 footer {
-    background-color: #fff;
-    color: #333;
-    padding: 60px 0;
-    border-top: 1px solid #e0e0e0;
+    background-color: #eaf7f0;
+    padding: 40px 0 20px 0;
+    font-family: sans-serif;
+    color: #000000; 
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
 .footer-logo {
     font-size: 1.5rem;
-    font-weight: 800;
+    font-weight: bold;
+    color: #000000; 
 }
 
-.social-icons a {
-    color: #38b2ac;
-    font-size: 1.3rem;
-    margin-left: 15px;
-    transition: transform 0.3s;
+.contact-section p {
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
-.social-icons a:hover {
-    color: #1a56ad;
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-btn {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-btn:hover {
+    color: #007bff;
     transform: translateY(-3px);
 }
 
-/* --- Responsive --- */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 20px;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .menu-icon { display: block; }
@@ -214,7 +234,6 @@ footer {
     .footer-content { flex-direction: column; text-align: center; gap: 30px; }
 }
 
-/* --- Functional Classes --- */
 .secondary-mode { display: none; }
 .mode-active { display: block; }
 
@@ -227,4 +246,117 @@ footer {
   border: 1px solid #ddd;
   background: white;
   transition: 0.3s;
+}
+.translation-main {
+    max-width: 1000px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+.translation-main h1 {
+    color: #025cb7; 
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.translation-main p {
+    color: #4a5568;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+.video-wrapper {
+    background: #000000;
+    border: 4px solid #26b5a3; 
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(2, 92, 183, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 800px;
+}
+.translation-output-box {
+    background: #f0fcf9; 
+    border-left: 6px solid #26b5a3; 
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000; 
+    min-height: 60px;
+}
+
+.switch-button, .speech-to-text {
+    background-color: #26b5a3 !important; 
+    color: white !important;
+    border: none !important;
+    padding: 12px 24px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.switch-button:hover, .speech-to-text:hover {
+    background-color: #025cb7 !important; 
+    transform: translateY(-2px);
+}
+
+.main-content h1 { color: #000000; font-weight: 800; }
+
+#text-to-sign {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 850px;
+    display: none; 
+}
+
+.mode-active#text-to-sign {
+    display: block;
+}
+#text-input {
+    width: 100%;
+    min-height: 180px;
+    padding: 25px;
+    font-size: 1.3rem; 
+    font-family: 'Lexend', sans-serif;
+    border: 3px solid #26b5a3; 
+    border-radius: 15px;
+    background-color: #ffffff;
+    color: #333;
+    resize: vertical; 
+    outline: none;
+    margin-bottom: 25px;
+    transition: border-color 0.3s ease;
+}
+#text-input:focus {
+    border-color: #025cb7; 
+}
+
+#output-video {
+    width: 100%;
+    min-height: 400px; 
+    background-color: #000;
+    border: 4px solid #025cb7; 
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.1rem;
+}
+.card {
+    flex: 1; 
+    min-width: 350px; 
+    max-width: 500px; 
+    padding: 50px 30px; 
+    margin: 15px; 
+}
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    max-width: 1200px; 
+    margin: 0 auto;
 }

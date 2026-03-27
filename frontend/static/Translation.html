@@ -19,7 +19,7 @@
             </div>
             <ul class="nav-links">
                 <li><a href="homepage.html">Home</a></li>
-                <li><a href="translation.html">Translation</a></li>
+                <li><a href="translation.html" class="active">Translation</a></li>
                 <li><a href="simplify.html">Simplify text</a></li>
                 <li><a href="homepage.html#about-us">About us</a></li>
             </ul>
@@ -27,25 +27,31 @@
         </nav>
     </header>
 
-    <main class="container">
+    <main class="container main-content">
         <section class="hero">
             <h1>Hand Sign Translation</h1>
-            <p>Our AI-powered translator turns hand signs into live text. Use your camera or upload a video to instantly bridge the gap between sign language and written words. It's designed to help students, creators, and teams communicate more inclusively by making gestures digitally readable in real-time.</p>
+            <p class="description-text">Our AI-powered translator turns hand signs into live text. Use your camera or upload a video to instantly bridge the gap between sign language and written words. It's designed to help students, creators, and teams communicate more inclusively by making gestures digitally readable in real-time.</p>
         </section>
-
-        <div class = "mode-switcher">
-
-            <button id="switch-button">Switch modes</button>
-
+    
+        <div class="mode-switcher">
+            <button id="switch-button" class="switch-button">Switch modes</button>
+    
             <div id="sign-to-text" class="mode-active">
-                <video id="camera" autoplay playsinline></video>
-                <canvas id="canvas" style="display:none;"></canvas>
-                <div class="output-text">Text here...</div>
+                <div class="video-wrapper">
+                    <video id="camera" autoplay playsinline style="width: 100%; display: block;"></video>
+                    <canvas id="canvas" style="display:none;"></canvas>
+                </div>
+                
+                <div class="translation-output-box">
+                    <span id="output-text">Text here...</span>
+                </div>
             </div>
-
+    
             <div id="text-to-sign" class="secondary-mode">
-                <textarea id="text-input" placeholder="Enter text:"></textarea>
-                <div id="output-video">Sign video here...</div>
+                <textarea id="text-input" placeholder="Enter text:" style="width: 100%; border-radius: 10px; border: 2px solid #26b5a3; padding: 15px; margin-bottom: 15px;"></textarea>
+                <div id="output-video" class="video-wrapper" style="min-height: 200px; display: flex; align-items: center; justify-content: center; color: white;">
+                    Sign video here...
+                </div>
             </div>
         </div>
     </main>
@@ -53,15 +59,18 @@
     <footer>
         <div class="container footer-content">
             <div class="footer-logo">SignSpeak</div>
+            
             <div class="contact-section">
                 <p>Contact us:</p>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/?hl=bg" class="social-btn"><i class="fab fa-instagram"></i></a>
-                    <a href="https://x.com/" class="social-btn"><i class="fab fa-twitter"></i></a>
-                    <a href="https://www.facebook.com/?locale=bg_BG" class="social-btn"><i class="fab fa-facebook-f"></i></a>
-                </div>
+                    <a href="https://www.instagram.com/?hl=bg" class="social-btn" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://x.com/" class="social-btn" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/?locale=bg_BG" class="social-btn" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
                 </div>
             </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 SignSpeak. All rights reserved.
         </div>
     </footer>
 
