@@ -10,13 +10,14 @@ body {
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 0px 20px;
 }
 
 /* --- Master Header & Navigation --- */
 header {
     background-color: #ffffff;
     padding: 20px 0;
+    align-items: center;
     border-bottom: 1px solid #e0e0e0;
     position: sticky;
     top: 0;
@@ -28,7 +29,7 @@ header {
 header nav {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 0px;
     display: flex;
     justify-content: space-between; /* Pushes Logo left and Nav right */
     align-items: center;
@@ -49,18 +50,14 @@ header nav {
     display: flex;
     gap: 25px;
     margin: 0;
-    padding: 0;
     align-items: center;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: #333333 !important; /* Keeps links from turning purple too */
+    color: #333;
     font-weight: 500;
-    font-size: 1rem;
-    padding-bottom: 5px;
-    border-bottom: 2px solid transparent; 
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 /* Hover Effect: Teal line and text */
@@ -71,9 +68,10 @@ header nav {
 
 /* Active Page: Bold and Navy Line */
 .nav-links a.active {
-    font-weight: 800 !important;
-    color: #000000 !important;
-    border-bottom: 2px solid #001f3f;
+    font-weight: 800; 
+    color: #000000;
+    border-bottom: 2px solid #001f3f; 
+    display: inline-block;
 }
 
 /* --- Responsive Fix --- */
@@ -289,25 +287,60 @@ footer {
     cursor: pointer;
     font-size: 30px;
 }
-
-/* 2. Mobile View (Screens smaller than 768px) */
-@media screen and (max-width: 768px) {
-    .nav-links {
-        display: none; /* Hide the full list of links */
-        
-        /* Optional: Style to make it a vertical menu later */
-        flex-direction: column; 
-        width: 100%;
-        text-align: center;
+/* --- Unified Mobile Responsive Menu --- */
+@media (max-width: 768px) {
+    header nav {
+        position: relative; /* Helps anchor the dropdown */
+        justify-content: space-between;
     }
 
+    /* 1. Show the 3-line menu icon on mobile */
     .menu-icon {
-        display: block; /* Show the 3 lines now! */
+        display: block !important; 
+        font-size: 28px;
+        cursor: pointer;
+        color: #333;
+        z-index: 1100;
     }
 
-    /* This class will be added via JavaScript when you click the 3 lines */
+    /* 2. Hide the links and turn them into the dropdown box */
+    .nav-links {
+        display: none; /* Hidden by default */
+        position: absolute;
+        top: 100%;     /* Drops down from the bottom of header */
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        flex-direction: column; 
+        padding: 20px 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        z-index: 1000;
+        gap: 0; /* Remove the gap from desktop */
+    }
+
+    /* 3. Show when JS adds the .active class */
     .nav-links.active {
         display: flex;
+    }
+
+    /* 4. Spacing for the rows in the menu */
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        display: block;
+        width: 100%;
+    }
+
+    /* Space out the icons you added */
+    .nav-links i {
+        margin-right: 10px;
+        width: 25px;
     }
 }
 

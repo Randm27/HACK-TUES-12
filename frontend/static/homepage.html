@@ -19,18 +19,20 @@
 
 <!-- Header -->
 <header>
-    <nav>
+    <nav class="container">
         <div class="logo">
             <img class="image_logo" src="favicon/favicon.svg">
-            <a href="homepage.html">SignSpeak</a>
+            <a href="homepage.html" style="text-decoration: none; color: inherit;">SignSpeak</a>
         </div>
         <ul class="nav-links">
-            <li><a href="homepage.html" class="active">Home</a></li>
-            <li><a href="Translation.html">Translation</a></li>
-            <li><a href="simplify.html">Simplify text</a></li>
-            <li><a href="homepage.html#about-us">About Us</a></li>
+            <li class="active"><a href="homepage.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="Translation.html"><i class="fas fa-language"></i> Translation</a></li>
+            <li><a href="simplify.html"><i class="fas fa-wand-magic-sparkles"></i> Simplify text</a></li>
+            <li><a href="homepage.html#about-us"><i class="fas fa-info-circle"></i> About us</a></li>
         </ul>
-        <div class="menu-icon">☰</div>
+        <div class="menu-icon" id="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
     </nav>
 </header>
 
