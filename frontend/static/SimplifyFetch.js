@@ -1,3 +1,5 @@
+;
+
 function showLoader() {
     document.getElementById("outputArea").style.display = "none";
     document.querySelector(".loader-container").style.display = "flex";
@@ -12,7 +14,7 @@ async function sendTextToBackend() {
     const inputText = document.getElementById("inputArea").value;
     showLoader();
 
-    const { SERVER_SIMPLIFY_URL } = getconfgi();
+    const { SERVER_SIMPLIFY_URL } = getConfig();
 
     const response = await fetch(`${SERVER_SIMPLIFY_URL}/simplify`, {
         method: "POST",
