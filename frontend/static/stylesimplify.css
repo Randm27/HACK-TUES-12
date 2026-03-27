@@ -90,7 +90,8 @@ header nav {
     }
 }
 .workspace {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
     margin-bottom: 40px;
@@ -249,6 +250,7 @@ footer {
         gap: 20px;
     }
 }
+<<<<<<< HEAD
 
 /* .simplifyTextArea{
     font-family: Arial;
@@ -284,4 +286,32 @@ footer {
     background-color: #eaf7f0;
     color: #2e2e2e;
     padding: 22px;
+=======
+/* 1. Desktop View (Default) */
+.menu-icon {
+    display: none; /* Hide the 3 lines on PC */
+    cursor: pointer;
+    font-size: 30px;
+}
+
+/* 2. Mobile View (Screens smaller than 768px) */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide the full list of links */
+        
+        /* Optional: Style to make it a vertical menu later */
+        flex-direction: column; 
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu-icon {
+        display: block; /* Show the 3 lines now! */
+    }
+
+    /* This class will be added via JavaScript when you click the 3 lines */
+    .nav-links.active {
+        display: flex;
+    }
+>>>>>>> 3cfb3b6 (mobile changes)
 }

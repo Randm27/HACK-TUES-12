@@ -360,3 +360,18 @@ footer {
     max-width: 1200px; 
     margin: 0 auto;
 }
+@media (max-width: 768px) {
+
+    .cards {
+        padding: 0 10px; 
+        gap: 20px; 
+    }
+
+    .card {
+        min-width: 0;      
+        width: 100%;      
+        max-width: 90%;    
+        margin: 10px auto; 
+        padding: 30px 20px; 
+    }
+}
