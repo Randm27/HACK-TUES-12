@@ -30,9 +30,10 @@ function captureFrame() {
 
 async function sendFrameToBackend() {
   const frame = captureFrame();
-  const serverURL = "http://172.20.10.11:5000"
+  console.log();
+  const { SERVER_GESTURE_URL } = getConfig();
 
-  const response = await fetch(`${serverURL}/analyze-frame`, {
+  const response = await fetch(`${SERVER_GESTURE_URL}/analyze-frame`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

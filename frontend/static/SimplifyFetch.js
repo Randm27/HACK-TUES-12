@@ -1,7 +1,9 @@
 async function sendTextToBackend() {
     const inputText = document.getElementById("inputArea").value;
 
-    const response = await fetch("http://127.0.0.1:8000/simplify", {
+    const { SERVER_SIMPLIFY_URL } = getconfgi();
+
+    const response = await fetch(`${SERVER_SIMPLIFY_URL}/simplify`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

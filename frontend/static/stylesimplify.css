@@ -167,3 +167,39 @@ footer {
     color: #888;
     font-size: 13px;
 }
+
+/* .simplifyTextArea{
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 1.5px;
+    letter-spacing: 0.5px;
+    text-align: left;
+    background-color: #eaf7f0;
+    color: #2e2e2e;
+} */
+
+#inputArea{
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 1.5px;
+    letter-spacing: 1px;
+    text-align: left;
+    /* background-color: #eaf4fb;
+    color: #1f2a44; */
+    background-color: #eaf7f0;
+    color: #2e2e2e;
+    padding: 22px;
+}
+
+#outputArea{
+    font-family: Arial;
+    font-size: 18px;
+    line-height: 1.5px;
+    letter-spacing: 1px;
+    text-align: left;
+    /* background-color: #eaf4fb;
+    color: #1f2a44; */
+    background-color: #eaf7f0;
+    color: #2e2e2e;
+    padding: 22px;
+}
